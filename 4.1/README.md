@@ -24,19 +24,34 @@ Below is my personal finger-assignment for this layout. Fingers are assigned thi
 ![v4.1 Layout Finger Assignment](https://raw.githubusercontent.com/asianboii-chen/AsianboiisUI/master/4.1/4.1_finger_assignment.png)
 
 ***
-## Key Frequency Statistics After a Week of Use
+## Key Frequency Statistics After a Week of Usage
 
-I have included a key-logger in this new version of Extraordinary UI (no, it does not record your password; it simply counts the frequency of each key). Here is the data on key-releases of each key, which includes all of typing, shortcuts, and function keys. Note that the numbers at the bottom-right corners are percentages.
+I have included a key-logger in this new version of Extraordinary UI (no, it does not record your password; it simply counts the frequency of each key). Here is the data on key-releases of each key, which includes all of typing, shortcuts, and function keys. Note that the numbers at the bottom-right corners are percentages. *Also note that "the week of usage" was a week during summer, meaning that I did not do any R-markdown or too much programming. I have only written a bit of Java and done a bit of typing tests during majority of the week (including, of course, writing up this report).*
 
 ![v4.1 Basic Layout](https://raw.githubusercontent.com/asianboii-chen/AsianboiisUI/master/4.1/4.1_one_week_total_stats.png)
 
 | Total Key Releases | 162,732 |
 |--------------------|---------|
-| Character Inputs   | 66%     |
-| Modifier+          | 19%     |
-| Fn+                | 12%     |
+| Character Inputs   | 65.7%   |
+| Modifier+          | 18.8%   |
+| Fn+                | 11.8%   |
 | Shift+             | 5.9%    |
 | Control+           | 1.4%    |
+
+While Extraordinary UI solves most of the pinkie-problems on any regular keyboard (including alternative layouts like Dvorak or Workman), it still leaves the left-control key to the left-pinkie. Swapping left-control with left-alt seems to be a solution, but that would make pressing stuff like Ctrl+C very RSI-probe. At this point, I am just waiting for the birth of my custom-built keyboard, which has more dedicated thumb cluster keys to hopefully solve this problem.
+
+| Finger      | Usage   | Finger       | Usage   |
+|-------------|---------|--------------|---------|
+| Left Thumb  | 9.1%    | Right Thumb  | 8.2%    |
+| Left Index  | 11.8%   | Right Index  | 10.8%   |
+| Left Middle | 12.6%   | Right Middle | 9.7%    |
+| Left Ring   | 8.2%    | Right Ring   | 9.4%    |
+| Left Pinkie | 8.2%    | Right Pinkie | 7.6%    |
+| Left Palm   | 0.9%    | Right Palm   | 3.5%    |
+
+| Left Hand | Right Hand |
+|-----------|------------|
+| 50.8%     | 49.2%      |
 
 Here are the frequencies of only character inputs (no modifier other than shift may be held during the key press):
 
