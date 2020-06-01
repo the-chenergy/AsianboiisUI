@@ -2,6 +2,8 @@
 # Asianboii's (Extraordinary) UI
 
 
+[Current beta version testing: v4.1, M 05/25/20](https://github.com/asianboii-chen/AsianboiisUI/blob/master/4.1/README.md) *(includes a new layout design and useful keyboard usage stats)*
+
 The latest version released: v4.0, T 12/31/19
 
 Website for work logs: https://docs.google.com/document/d/16oO3_emKCy5HxPa0xN1-1jzKjLSycNQnF9eaEBX04Yk/edit?usp=sharing
