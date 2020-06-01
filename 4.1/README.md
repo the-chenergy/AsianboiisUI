@@ -6,8 +6,8 @@
 ## Background
 
 I created the keyboard layout of the 4.0 version before I started typing more heavily. It was created to better prepare for my sophomore year in college. While most about the layout is great, it had many annoying parts I could not get over during a long session of coding R-markdown, C, and messing around with terminal. The more I typed in these languages, the more I hated the 4.0 layout, though definitely not as terrible as Qwerty. After thinking about the layout more, I thought that the layout was still great but with these problems:
-* Characters like "_", "\", and "$" required shift, but R-markdown and C needed them a lot. In fact, backslash turned up as often as the letter "u" in R-markdown, based on my stats.
-* Characters like "`", "@", and "%" did not require shift, but this was not justified by their rare usage.
+* Characters like "_", "\", and "$" required shift, but R-markdown and C needed them a lot. Backslash turned up as often as the letter "u" in R-markdown, based on my stats.
+* Characters like "`", "@", and "%" did not require shift, but their rare usage did not justify this.
 * The operator "->" was used a lot in C but was awkward to type.
 
 On top of solving these problems, I am also building my custom keyboard soon. I wanted the layout to be as close to perfect as possible, which matches the point of building a custom keyboard.
@@ -26,7 +26,7 @@ Below is my personal finger-assignment for this layout. Fingers are assigned thi
 ***
 ## Key Frequency Statistics After a Week of Usage
 
-I have included a key-logger in this new version of Extraordinary UI (no, it does not record your password; it simply counts the frequency of each key). Here is the data on key-releases of each key, which includes all of typing, shortcuts, and function keys. Note that the numbers at the bottom-right corners are percentages. *Also note that "the week of usage" was a week during summer, meaning that I did not do any R-markdown or too much programming. I have only written a bit of Java and done a bit of typing tests during majority of the week (including, of course, writing up this report).*
+I have included a key-logger in this new version of Extraordinary UI (no, it does not record your password; it merely counts the frequency of each key). Here is the data on key-releases of each key, including typing, shortcuts, and function key-combos. Note that the numbers at the bottom-right corners are percentages. *Also note that "the week of usage" was a week during summer, meaning that I did not do any R-markdown or too much programming. I have only written a bit of Java and done a few typing tests during the majority of the week (including, of course, writing up this report).*
 
 ![v4.1 Basic Layout](https://raw.githubusercontent.com/asianboii-chen/AsianboiisUI/master/4.1/4.1_one_week_total_stats.png)
 
@@ -38,7 +38,7 @@ I have included a key-logger in this new version of Extraordinary UI (no, it doe
 | Shift+             | 5.9%    |
 | Control+           | 1.4%    |
 
-While Extraordinary UI solves most of the pinkie-problems on any regular keyboard (including alternative layouts like Dvorak or Workman), it still leaves the left-control key to the left-pinkie. Swapping left-control with left-alt seems to be a solution, but that would make pressing stuff like Ctrl+C very RSI-probe. At this point, I am just waiting for the birth of my custom-built keyboard, which has more dedicated thumb cluster keys to hopefully solve this problem.
+While Extraordinary UI solves most of the pinkie-problems on any regular keyboard (including alternative layouts like Dvorak or Workman), it still leaves the left-control key to the left-pinkie. Swapping left-control with left-alt seems to be a solution, but that would make pressing stuff like Ctrl+C very RSI-prone. At this point, I am just waiting for the birth of my custom-built keyboard, which has more dedicated thumb cluster keys to solve this problem hopefully.
 
 | Finger      | Usage   | Finger       | Usage   |
 |-------------|---------|--------------|---------|
@@ -53,6 +53,6 @@ While Extraordinary UI solves most of the pinkie-problems on any regular keyboar
 |-----------|------------|
 | 50.8%     | 49.2%      |
 
-Here are the frequencies of only character inputs (no modifier other than shift may be held during the key press):
+Here are the frequencies of only character inputs (no modifier other than shift may be held during the key-press):
 
 ![v4.1 Basic Layout](https://raw.githubusercontent.com/asianboii-chen/AsianboiisUI/master/4.1/4.1_one_week_char_stats.png)
