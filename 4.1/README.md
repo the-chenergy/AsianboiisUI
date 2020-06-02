@@ -53,6 +53,15 @@ While Extraordinary UI solves most of the pinkie-problems on any regular keyboar
 |-----------|------------|
 | 50.8%     | 49.2%      |
 
+| Row           | Usage |
+|---------------|-------|
+| Function Row  | 1.7%  |
+| Number Row    | 2.5%  |
+| Top Row       | 19.4% |
+| Home Row      | 45.0% |
+| Bottom Row    | 9.5%  |
+| Space-Bar Row | 21.9% |
+
 Here are the frequencies of only character inputs (no modifier other than shift may be held during the key-press):
 
 ![](https://raw.githubusercontent.com/asianboii-chen/AsianboiisUI/master/4.1/4.1_one_week_char_stats.png)
