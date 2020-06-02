@@ -28,7 +28,7 @@ Below is my personal finger-assignment for this layout. Fingers are assigned thi
 
 I have included a key-logger in this new version of Extraordinary UI (no, it does not record your password; it merely counts the frequency of each key). Here is the data on key-releases of each key, including typing, shortcuts, and function key-combos. Note that the numbers at the bottom-right corners are percentages. *Also note that "the week of usage" was a week during summer, meaning that I did not do any R-markdown or too much programming. I have only written a bit of Java and done a few typing tests during the majority of the week (including, of course, writing up this report).*
 
-![v4.1 Basic Layout](https://raw.githubusercontent.com/asianboii-chen/AsianboiisUI/master/4.1/4.1_one_week_total_stats.png)
+![](https://raw.githubusercontent.com/asianboii-chen/AsianboiisUI/master/4.1/4.1_one_week_total_stats.png)
 
 | Total Key Releases | 162,732 |
 |--------------------|---------|
@@ -55,4 +55,9 @@ While Extraordinary UI solves most of the pinkie-problems on any regular keyboar
 
 Here are the frequencies of only character inputs (no modifier other than shift may be held during the key-press):
 
-![v4.1 Basic Layout](https://raw.githubusercontent.com/asianboii-chen/AsianboiisUI/master/4.1/4.1_one_week_char_stats.png)
+![](https://raw.githubusercontent.com/asianboii-chen/AsianboiisUI/master/4.1/4.1_one_week_char_stats.png)
+
+***
+Image sources on Keyboard Layout Editor:
+* [http://www.keyboard-layout-editor.com/#/gists/ebbbc4f0b8260dfac7d33e087b100bbb](http://www.keyboard-layout-editor.com/#/gists/ebbbc4f0b8260dfac7d33e087b100bbb)
+* [http://www.keyboard-layout-editor.com/#/gists/53782c99f92fc2402d5cb21f7504e4e1](http://www.keyboard-layout-editor.com/#/gists/53782c99f92fc2402d5cb21f7504e4e1)
