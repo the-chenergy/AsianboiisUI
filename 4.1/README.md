@@ -1,11 +1,11 @@
 # Extraordinary UI v4.1 (Beta)
 
-*This page includes an overview of the updated keyboard layout and some keyboard usage data.*
+*This page includes an overview of the* [*updated*](https://github.com/asianboii-chen/AsianboiisUI/blob/master/README.md) *keyboard layout and some keyboard usage data.*
 
 ***
 ## Background
 
-I created the keyboard layout of the 4.0 version before I started typing more heavily. It was created to better prepare for my sophomore year in college. While most about the layout is great, it had many annoying parts I could not get over during a long session of coding R-markdown, C, and messing around with terminal. The more I typed in these languages, the more I hated the 4.0 layout, though definitely not as terrible as Qwerty. After thinking about the layout more, I thought that the layout was still great but with these problems:
+I created [the keyboard layout of the 4.0 version](https://github.com/asianboii-chen/AsianboiisUI/blob/master/README.md) before I started typing more heavily. It was created to better prepare for my sophomore year in college. While most about the layout is great, it had many annoying parts I could not get over during a long session of coding R-markdown, C, and messing around with terminal. The more I typed in these languages, the more I hated the 4.0 layout, though definitely not as terrible as Qwerty. After thinking about the layout more, I thought that the layout was still great but with these problems:
 * Characters like "_", "\", and "$" required shift, but R-markdown and C needed them a lot. Backslash turned up as often as the letter "u" in R-markdown, based on my stats.
 * Characters like "`", "@", and "%" did not require shift, but their rare usage did not justify this.
 * The operator "->" was used a lot in C but was awkward to type.
