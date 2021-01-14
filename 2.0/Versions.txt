@@ -1,6 +1,0 @@
-Version		Unactivated Window Scrolling	Right Win Mapped to Ctrl
-------------------------------------------------------------------------
-Default		YES				YES
-NS		NO				YES
-RW		YES				NO
-NSRW		NO				NO
