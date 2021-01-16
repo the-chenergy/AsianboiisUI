@@ -2,7 +2,7 @@
 # Asianboii's (Extraordinary) UI
 
 
-[Current beta version testing: v4.1, M 05/25/20](https://github.com/asianboii-chen/AsianboiisUI/blob/master/4.1/README.md) *(includes a new layout design and useful keyboard usage stats)*
+[Current beta version testing: v4.1, F 01/15/21](https://github.com/asianboii-chen/AsianboiisUI/blob/master/OldVersions/4.1/README.md) *(includes a new layout design and useful keyboard usage stats)*
 
 The latest version released: v4.0, T 12/31/19
 
@@ -20,7 +20,7 @@ Asianboii's UI is a compilation of a superior layout for letters and punctuation
 ***
 ### Keyboard Layout
 
-![The default Asianboii's UI layout](https://github.com/asianboii-chen/AsianboiisUI/blob/master/4.0/Layout-4.0-Default.png)
+![The default Asianboii's UI layout](https://github.com/asianboii-chen/AsianboiisUI/blob/master/OldVersions/4.0/Layout-4.0-Default.png)
 
 The letter layout of the Asianboii's UI is mostly based on the [Simplified Dvorak Layout](https://en.wikipedia.org/wiki/Dvorak_keyboard_layout) with one major modification: the locations of the 'I' and 'U' keys are swapped. I've been using Dvorak since as early as I started learning English (I came to the US as a high school sophomore in fall 2015), and for the most part, I've never been inconvenienced by using a different layout than everyone else. I've loved it since I first knew of it and learned it. The swapped 'I' and 'U' keys took me a while to relearn and getting used to, but after the learning curve, I noticed a significant improvement in comfort when typing.
 
@@ -28,13 +28,13 @@ I also put plenty of time and effort into designing the punctuation layout. Insp
 
 Keyboard shortcuts are very commonly used during programming, and it requires using the modifier keys (Ctrl, Alt, etc.). Using the modifiers on a regular keyboard is a nightmare in that one must keep the modifiers held while reaching out for another key to produce a "key-chord." This feature usually cramps one's hands into uncomfortable shapes, causing fatigue overtime. To solve this issue, I made the functionality of "sticky modifier keys" and included it in the 4.0 version. It gives me the option to press a keyboard shortcut by tapping keys in a sequence, which is much more comfortable to do. I also relocated some modifiers, such as the Ctrl and Shift keys. The Shift key is the most used modifier, so it deserved to be pressed by the strongest fingers—the thumbs. The Ctrl keys are moved to locations easier for pinkies to reach, and they're out of the way for the newly added Fn keys, which are more suited as palm-keys. Moreover, the Asianboii's UI automatically switches back to the Qwerty layout when any modifiers (other than Shift) are held down since all keyboard shortcuts are designed assuming a Qwerty layout, which is easier to use then they are on Dvorak.
 
-![The "toggled" layout (activated by holding down Tab key or by using toggle-lock/suspension key)](https://github.com/asianboii-chen/AsianboiisUI/blob/master/4.0/Layout-4.0-Toggled.png)
+![The "toggled" layout (activated by holding down Tab key or by using toggle-lock/suspension key)](https://github.com/asianboii-chen/AsianboiisUI/blob/master/OldVersions/4.0/Layout-4.0-Toggled.png)
 
 ***
 ### Keyboard and Mouse Macros
 
-![](https://github.com/asianboii-chen/AsianboiisUI/blob/master/4.0/Layout-4.0-Functions.png)
-![](https://github.com/asianboii-chen/AsianboiisUI/blob/master/4.0/Layout-4.0-SpecChars.png)
+![](https://github.com/asianboii-chen/AsianboiisUI/blob/master/OldVersions/4.0/Layout-4.0-Functions.png)
+![](https://github.com/asianboii-chen/AsianboiisUI/blob/master/OldVersions/4.0/Layout-4.0-SpecChars.png)
 
 Keyboard and mouse macros make up another crucial part of the Asianboii's UI. The keyboard macros are generally aimed to reduce hand movements while focused on typing, such as the onboard arrow keys and mouse function keys. These keyboard macros are triggered by holding down either of the Asianboii-introduced Fn keys, which are located on or near the bottom corners of the keyboard. I designed the Fn keys to be directly under my pinky-side palms while typing, so I can easily hold them using my palms. These keyboard macros can also be automatically converted into emacs/vim shortcuts, which can provide convenient support while programming in PuTTY.
 

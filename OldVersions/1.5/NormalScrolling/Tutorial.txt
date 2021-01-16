@@ -1,0 +1,39 @@
+#### Keyboard Layout ####
+
+	[`][<][>][{][}][|][^][&][*][(][)][[][]][Bksp]
+	[Tab]['][,][.][p][y][f][g][c][r][l][/][!][@ ]
+	[Caps][a][o][e]<u>[i][d]<h>[t][n][s][=][Entr]
+	[Shift][;][q][j][k][x][b][m][w][v][z][Shift ]
+
+	Shifted:
+
+	[~][1][2][3][4][5][6][7][8][9][0][%][$][Bksp]
+	[Tab][:][-][+][P][Y][F][G][C][R][L][\][?][# ]
+	[Caps][A][O][E]<U>[I][D]<H>[T][N][S][_][Entr]
+	[Shift]["][Q][J][K][X][B][M][W][V][Z][Shift ]
+
+Capslock also locks number row
+All ctrl/alt/win hotkeys stay on Qwerty layout (Ctrl+C is still Ctrl+C, not Ctrl+I)
+
+#### Shortcuts (on qwerty layout) ####
+
+[Scrolllock]: Toggle this extension on/off
+
+[Capslock]+[I,J,K,L]: Up/left/down/right arrows
+[Capslock]+[U]: Left one word (Ctrl+Left)
+[Capslock]+[O]: Right one word (Ctrl+Right)
+[Capslock]+[M]: Home
+[Capslock]+[,]: End
+[Capslock]+[Backspace]: Delete
+
+#### Features ####
+
+Inactive window scrolling: scroll contents in any inactive window without activating it
+
+Volume scrolling: [Shift]+scroll
+
+Muting: [Shift]+click wheel
+
+Brightness scrolling (might not work on some computers): [Capslock]+scroll
+
+Window pin: turn on capslock, then [Shift]+[Ctrl]

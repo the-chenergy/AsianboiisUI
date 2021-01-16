@@ -26,7 +26,7 @@
 	SetScrollLockState, Off
 ;}
 ;{ constants
-	global Version := "v4.1 Beta F 01/15/20"
+	global Version := "v4.1 Beta F 01/15/21"
 	
 	global DefaultSettingsFileName := "Settings.ini"
 	global UserSettingsFileName := Format("Settings_{}.ini", A_UserName)
@@ -1290,12 +1290,14 @@
 	
 	InitLogger()
 	{
-		LoggerKeyNames := StrSplit("esc f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 gra n1 n2 n3 n4 n5 n6 n7 n8 n9 n0 min equ bsp tab q w e r t y u i o p lsq rsq bsl cap a s d f g h j k l sem apo ent lsh z x c v b n m com dot fsl rsh lco lwi lal spa ral app rco psc del ins hom end pup pdn lar rar uar dar", " ")
+		; LoggerKeyNames := StrSplit("esc f1 f2 f3 f4 f5 f6 f7 f8 f9 f10 f11 f12 gra n1 n2 n3 n4 n5 n6 n7 n8 n9 n0 min equ bsp tab q w e r t y u i o p lsq rsq bsl cap a s d f g h j k l sem apo ent lsh z x c v b n m com dot fsl rsh lco lwi lal spa ral app rco psc del ins hom end pup pdn lar rar uar dar", " ")
+		LoggerKeyNames := StrSplit("dol amp ast equ lbr rbr lth gth lpa rpa lsq rsq pou apo com dot lp ly lf lg lc lr ll fsl das la lo le li lu ld lh lt ln ls und sem lq lj lk lx lb lm lw lv lz bsl n1 n2 n3 n4 n5 n6 n7 n8 n9 n0 car til gra quo que exc up uy uf ug uc ur ul per plu ua uo ue ui uu ud uh ut un us pip col uq uj uk ux ub um uw uv uz at", " ")
 		LoggerKeyCount := LoggerKeyNames.Length()
 		
 		; the number of types of frequencies the logger is in change of counting, which includes no-mod, every mod, every mod with
 		; shift key activated, and a total.
-		LoggerKeyFreqCount := 6 * 2 + 1
+		; LoggerKeyFreqCount := 6 * 2 + 1
+		LoggerKeyFreqCount := 1
 		
 		LoggerData := []
 		if (FileExist(LoggerDataFileName))
@@ -1354,7 +1356,8 @@
 		if (FileExist(LoggerDataFileName))
 			FileMove, %LoggerDataFileName%, % LoggerDataFileName "~", true ; create an emacs-style file backup
 		
-		data := "key`ttotal`tnorm`t+`t#`t!`t^`t$`t~`t#+`t!+`t^+`t$+`t~+`n"
+		; data := "key`ttotal`tnorm`t+`t#`t!`t^`t$`t~`t#+`t!+`t^+`t$+`t~+`n"
+		data := "key`treleases`n"
 		for keyCode, freqs in LoggerData
 		{
 			data .= LoggerKeyNames[keyCode]
@@ -1378,18 +1381,18 @@
 	LoggerRecord(keyCode)
 	{
 		mods := 2
-		if (IsShiftDown)
-		{
-			mods |= ((ModsDown & 62) << 8)
-			if (mods = 2)
-				mods |= 8
-		}
-		else
-		{
-			mods |= ((ModsDown & 62) << 3)
-			if (mods = 2)
-				mods |= 4
-		}
+		; if (IsShiftDown)
+		; {
+		; 	mods |= ((ModsDown & 62) << 8)
+		; 	if (mods = 2)
+		; 		mods |= 8
+		; }
+		; else
+		; {
+		; 	mods |= ((ModsDown & 62) << 3)
+		; 	if (mods = 2)
+		; 		mods |= 4
+		; }
 		
 		Loop, %LoggerKeyFreqCount%
 			if (mods & 1 << A_Index)
@@ -1397,91 +1400,6 @@
 		
 		LoggerHasChanged := true
 	}
-	
-	#If (UseLogger)
-	{
-		; todo: figure out how to fix this extremely-stupid ahk bug that turning on the key logger causes some f-keys and
-		; mouse gestures not to fire, sometimes, which is very weird.
-		; setting the input level and having the $ prefix for the hotkeys below don't help.
-		$~*Escape Up:: LoggerRecord(1)
-		$~*F1 Up:: LoggerRecord(2)
-		$~*F2 Up:: LoggerRecord(3)
-		$~*F3 Up:: LoggerRecord(4)
-		$~*F4 Up:: LoggerRecord(5)
-		$~*F5 Up:: LoggerRecord(6)
-		$~*F6 Up:: LoggerRecord(7)
-		$~*F7 Up:: LoggerRecord(8)
-		$~*F8 Up:: LoggerRecord(9)
-		$~*F9 Up:: LoggerRecord(10)
-		$~*F10 Up:: LoggerRecord(11)
-		$~*F11 Up:: LoggerRecord(12)
-		$~*F12 Up:: LoggerRecord(13)
-		$~*SC029 Up:: LoggerRecord(14)
-		$~*1 Up:: LoggerRecord(15)
-		$~*2 Up:: LoggerRecord(16)
-		$~*3 Up:: LoggerRecord(17)
-		$~*4 Up:: LoggerRecord(18)
-		$~*5 Up:: LoggerRecord(19)
-		$~*6 Up:: LoggerRecord(20)
-		$~*7 Up:: LoggerRecord(21)
-		$~*8 Up:: LoggerRecord(22)
-		$~*9 Up:: LoggerRecord(23)
-		$~*0 Up:: LoggerRecord(24)
-		$~*- Up:: LoggerRecord(25)
-		$~*= Up:: LoggerRecord(26)
-		$~*Backspace Up:: LoggerRecord(27)
-		$~*q Up:: LoggerRecord(29)
-		$~*w Up:: LoggerRecord(30)
-		$~*e Up:: LoggerRecord(31)
-		$~*r Up:: LoggerRecord(32)
-		$~*t Up:: LoggerRecord(33)
-		$~*y Up:: LoggerRecord(34)
-		$~*u Up:: LoggerRecord(35)
-		$~*i Up:: LoggerRecord(36)
-		$~*o Up:: LoggerRecord(37)
-		$~*p Up:: LoggerRecord(38)
-		$~*[ Up:: LoggerRecord(39)
-		$~*] Up:: LoggerRecord(40)
-		$~*SC02B Up:: LoggerRecord(41)
-		$~*CapsLock Up:: LoggerRecord(42)
-		$~*a Up:: LoggerRecord(43)
-		$~*s Up:: LoggerRecord(44)
-		$~*d Up:: LoggerRecord(45)
-		$~*f Up:: LoggerRecord(46)
-		$~*g Up:: LoggerRecord(47)
-		$~*h Up:: LoggerRecord(48)
-		$~*j Up:: LoggerRecord(49)
-		$~*k Up:: LoggerRecord(50)
-		$~*l Up:: LoggerRecord(51)
-		$~*SC027 Up:: LoggerRecord(52)
-		$~*SC028 Up:: LoggerRecord(53)
-		$~*Enter Up:: LoggerRecord(54)
-		$~*z Up:: LoggerRecord(56)
-		$~*x Up:: LoggerRecord(57)
-		$~*c Up:: LoggerRecord(58)
-		$~*v Up:: LoggerRecord(59)
-		$~*b Up:: LoggerRecord(60)
-		$~*n Up:: LoggerRecord(61)
-		$~*m Up:: LoggerRecord(62)
-		$~*, Up:: LoggerRecord(63)
-		$~*. Up:: LoggerRecord(64)
-		$~*SC035 Up:: LoggerRecord(65)
-		$~*LControl Up:: LoggerRecord(67)
-		$~*RAlt Up:: LoggerRecord(71)
-		$~*AppsKey Up:: LoggerRecord(72)
-		$~*PrintScreen Up:: LoggerRecord(74)
-		$~*Delete Up:: LoggerRecord(75)
-		$~*Insert Up:: LoggerRecord(76)
-		$~*Home Up:: LoggerRecord(77)
-		$~*End Up:: LoggerRecord(78)
-		$~*PgUp Up:: LoggerRecord(79)
-		$~*PgDn Up:: LoggerRecord(80)
-		$~*Left Up:: LoggerRecord(81)
-		$~*Right Up:: LoggerRecord(82)
-		$~*Up Up:: LoggerRecord(83)
-		$~*Down Up:: LoggerRecord(84)
-	}
-	#If
 ;}
 
 ; end of init code
@@ -1507,58 +1425,88 @@ return
 		*0:: HoldNormal("0", "0", true, false, true)
 		*-:: HoldNormal("[", "6", false, true, false)
 		*=:: HoldNormal("]", "``", false, true, false)
-		*q:: SC028
+		*q:: HoldNormal("'", "'", false, true, false)
 		*w:: HoldNormal(",", "/", false, true, false)
 		*e:: HoldNormal(".", "1", false, true, false)
-		*r:: p
-		*t:: y
-		*y:: f
-		*u:: g
-		*i:: c
-		*o:: r
-		*p:: l
+		*r:: HoldNormal("p", "p", false, true, true)
+		*t:: HoldNormal("y", "y", false, true, true)
+		*y:: HoldNormal("f", "f", false, true, true)
+		*u:: HoldNormal("g", "g", false, true, true)
+		*i:: HoldNormal("c", "c", false, true, true)
+		*o:: HoldNormal("r", "r", false, true, true)
+		*p:: HoldNormal("l", "l", false, true, true)
 		*[:: HoldNormal("/", "5", false, true, false)
 		*]:: HoldNormal("\", "2", false, true, false)
 		*CapsLock:: HoldNormal("-", "=", false, true, false)
-		*s:: o
-		*d:: e
-		*f:: i
-		*g:: u
-		*h:: d
-		*j:: h
-		*k:: t
-		*l:: n
-		*SC027:: s ; semicolon
+		*a:: HoldNormal("a", "a", false, true, true)
+		*s:: HoldNormal("o", "o", false, true, true)
+		*d:: HoldNormal("e", "e", false, true, true)
+		*f:: HoldNormal("i", "i", false, true, true)
+		*g:: HoldNormal("u", "u", false, true, true)
+		*h:: HoldNormal("d", "d", false, true, true)
+		*j:: HoldNormal("h", "h", false, true, true)
+		*k:: HoldNormal("t", "t", false, true, true)
+		*l:: HoldNormal("n", "n", false, true, true)
+		*SC027:: HoldNormal("s", "s", false, true, true) ; semicolon
 		*SC028:: HoldNormal("-", "\", true, true, false) ; apostrophe
-		*z:: SC027
-		*x:: q
-		*c:: j
-		*v:: k
-		*b:: x
-		*n:: b
-		*,:: w
-		*.:: v
-		*SC035:: z ; slash
+		*z:: HoldNormal(";", ";", false, true, false)
+		*x:: HoldNormal("q", "q", false, true, true)
+		*c:: HoldNormal("j", "j", false, true, true)
+		*v:: HoldNormal("k", "k", false, true, true)
+		*b:: HoldNormal("x", "x", false, true, true)
+		*n:: HoldNormal("b", "b", false, true, true)
+		*m:: HoldNormal("m", "m", false, true, true)
+		*,:: HoldNormal("w", "w", false, true, true)
+		*.:: HoldNormal("v", "v", false, true, true)
+		*SC035:: HoldNormal("z", "z", false, true, true) ; slash
 		
-		*SC029 Up:: ReleaseNormal("3", "``", false) ; tilde
-		*1 Up:: ReleaseNormal("4", "1", true)
-		*2 Up:: ReleaseNormal("7", "2", true)
-		*3 Up:: ReleaseNormal("8", "3", true)
-		*4 Up:: ReleaseNormal("=", "4", true)
-		*5 Up:: ReleaseNormal("[", "5", true)
-		*6 Up:: ReleaseNormal("]", "6", true)
-		*7 Up:: ReleaseNormal(",", "7", true)
-		*8 Up:: ReleaseNormal(".", "8", true)
-		*9 Up:: ReleaseNormal("9", "9", true)
-		*0 Up:: ReleaseNormal("0", "0", true)
-		*- Up:: ReleaseNormal("[", "6", false)
-		*= Up:: ReleaseNormal("]", "``", false)
-		*w Up:: ReleaseNormal(",", "/", false)
-		*e Up:: ReleaseNormal(".", "1", false)
-		*[ Up:: ReleaseNormal("/", "5", false)
-		*] Up:: ReleaseNormal("\", "2", false)
-		*CapsLock Up:: ReleaseNormal("-", "=", false)
-		*SC028 Up:: ReleaseNormal("-", "\", false) ; apostrophe
+		*SC029 Up:: ReleaseNormal("3", "``", false, 13)
+		*1 Up:: ReleaseNormal("4", "1", true, 1)
+		*2 Up:: ReleaseNormal("7", "2", true, 2)
+		*3 Up:: ReleaseNormal("8", "3", true, 3)
+		*4 Up:: ReleaseNormal("=", "4", true, 4)
+		*5 Up:: ReleaseNormal("[", "5", true, 5)
+		*6 Up:: ReleaseNormal("]", "6", true, 6)
+		*7 Up:: ReleaseNormal(",", "7", true, 7)
+		*8 Up:: ReleaseNormal(".", "8", true, 8)
+		*9 Up:: ReleaseNormal("9", "9", true, 9)
+		*0 Up:: ReleaseNormal("0", "0", true, 10)
+		*- Up:: ReleaseNormal("[", "6", false, 11)
+		*= Up:: ReleaseNormal("]", "``", false, 12)
+		*q Up:: ReleaseNormal("'", "'", false, 14)
+		*w Up:: ReleaseNormal(",", "/", false, 15)
+		*e Up:: ReleaseNormal(".", "1", false, 16)
+		*r Up:: ReleaseNormal("p", "p", true, 17)
+		*t Up:: ReleaseNormal("y", "y", true, 18)
+		*y Up:: ReleaseNormal("f", "f", true, 19)
+		*u Up:: ReleaseNormal("g", "g", true, 20)
+		*i Up:: ReleaseNormal("c", "c", true, 21)
+		*o Up:: ReleaseNormal("r", "r", true, 22)
+		*p Up:: ReleaseNormal("l", "l", true, 23)
+		*[ Up:: ReleaseNormal("/", "5", false, 24)
+		*] Up:: ReleaseNormal("\", "2", false, 47)
+		*CapsLock Up:: ReleaseNormal("-", "=", false, 25)
+		*a Up:: ReleaseNormal("a", "a", true, 26)
+		*s Up:: ReleaseNormal("o", "o", true, 27)
+		*d Up:: ReleaseNormal("e", "e", true, 28)
+		*f Up:: ReleaseNormal("i", "i", true, 29)
+		*g Up:: ReleaseNormal("u", "u", true, 30)
+		*h Up:: ReleaseNormal("d", "d", true, 31)
+		*j Up:: ReleaseNormal("h", "h", true, 32)
+		*k Up:: ReleaseNormal("t", "t", true, 33)
+		*l Up:: ReleaseNormal("n", "n", true, 34)
+		*SC027 Up:: ReleaseNormal("s", "s", true, 35)
+		*SC028 Up:: ReleaseNormal("-", "\", false, 36)
+		*z Up:: ReleaseNormal(";", ";", false, 37)
+		*x Up:: ReleaseNormal("q", "q", true, 38)
+		*c Up:: ReleaseNormal("j", "j", true, 39)
+		*v Up:: ReleaseNormal("k", "k", true, 40)
+		*b Up:: ReleaseNormal("x", "x", true, 41)
+		*n Up:: ReleaseNormal("b", "b", true, 42)
+		*m Up:: ReleaseNormal("m", "m", true, 43)
+		*, Up:: ReleaseNormal("w", "w", true, 44)
+		*. Up:: ReleaseNormal("v", "v", true, 45)
+		*SC035 Up:: ReleaseNormal("z", "z", true, 46)
 	}
 	#If
 	
@@ -1623,12 +1571,21 @@ return
 		SendInput, {Blind}{%key% Down}
 	}
 	
-	ReleaseNormal(key, shiftedKey, useCapsLock)
+	; keyCodes: for key logger
+	ReleaseNormal(key, shiftedKey, useCapsLock, keyCode)
 	{
 		if ((IsCapsLockOn && useCapsLock) ^ IsShiftDown)
+		{
 			SendInput, {Blind}{%shiftedKey% Up}
+			if (UseLogger)
+				LoggerRecord(keyCode + 47) ; 47 "type-able" keys
+		}
 		else
+		{
 			SendInput, {Blind}{%key% Up}
+			if (UseLogger)
+				LoggerRecord(keyCode)
+		}
 	}
 ;}
 ;{ advanced deletion
