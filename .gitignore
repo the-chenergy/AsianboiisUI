@@ -2,5 +2,7 @@ _Test*.ahk
 
 Settings_*.ini
 
+debug.log
+
 KeyLogs.txt
 KeyLogs.txt~
