@@ -26,7 +26,7 @@
 	SetScrollLockState, Off
 ;}
 ;{ constants
-	global Version := "v4.1 Beta U 01/17/21"
+	global Version := "v4.1 Beta W 02/03/21"
 	
 	global DefaultSettingsFileName := "Settings.ini"
 	global UserSettingsFileName := Format("Settings_{}.ini", A_UserName)
@@ -589,7 +589,7 @@
 		strData := "(key) @ (located at)`n`n"
 		strData .= "LControl @ LShift`n"
 		
-		if (SwapLAltAndLWinKeyPositions)
+		if (SwapLAltAndLWinKeyPositions && false) ; swapping feature is temporarily removed
 		{
 			strData .= "LAlt @ LWin`n"
 			strData .= "LWin @ LAlt`n"
@@ -2449,6 +2449,8 @@ return
 ;{ quick-run macros
 	*#q:: QuickRun("Q")
 	*#w:: QuickRun("W")
+	*#e:: #e
+	*#r:: #r
 	*#t:: QuickRun("T")
 	*#a:: QuickRun("A")
 	*#s:: QuickRun("S")
@@ -2458,6 +2460,7 @@ return
 	*#z:: QuickRun("Z")
 	*#x:: QuickRun("X")
 	*#c:: QuickRun("C")
+	*#v:: #v
 	*#b:: QuickRun("B")
 	
 	QuickRun(key)
@@ -2528,9 +2531,11 @@ return
 		
 		return
 	}
+	*#p:: #p
 	*#h:: TrayItemLeftyMouse()
 	*#j:: TrayItemTerminalFuncs()
 	*#k:: TrayItemTypingTestMode()
+	*#l:: #l
 	*#SC028:: TrayItemMagicScroll()
 	*#n:: ToggleNeverSleep(!UseNeverSleep, true)
 	*#m:: TrayItemGesture()
@@ -3194,8 +3199,10 @@ return
 	}
 ;}
 ;{ lwin or lalt: lwin
+/*
 	#If (!SwapLAltAndLWinKeyPositions && !IsStickyWinDown)
 		*LWin:: PressMod("LWin", true, true, false, "")
+		*LWin:: PressMod("LWin", true, false, false, "")
 	#If (!SwapLAltAndLWinKeyPositions && IsStickyWinDown)
 		*LWin:: AbortStickyKey(true, false)
 	#If
@@ -3205,18 +3212,13 @@ return
 	#If (SwapLAltAndLWinKeyPositions && IsStickyWinDown)
 		*LAlt:: AbortStickyKey(true, false)
 	#If
+*/
 ;}
 ;{ lalt or lwin: lalt
-	#If (!SwapLAltAndLWinKeyPositions && !IsStickyAltDown)
+	#If (!IsStickyAltDown)
 		*LAlt:: PressLAlt()
-	#If (!SwapLAltAndLWinKeyPositions && IsStickyAltDown)
+	#If (IsStickyAltDown)
 		*LAlt:: AbortStickyKey(true, false)
-	#If
-	
-	#If (SwapLAltAndLWinKeyPositions && !IsStickyAltDown)
-		*LWin:: PressLAlt()
-	#If (SwapLAltAndLWinKeyPositions && IsStickyAltDown)
-		*LWin:: AbortStickyKey(true, false)
 	#If
 	
 	PressLAlt()
