@@ -2923,7 +2923,8 @@ return
 			}
 		}
 		
-		if ((IsToggleDown || UseMagicScrolling) && ModsDown & ~ToggleBit = 0) ; using magic scrolling while speeding up fixes a stupid windows 10 bug ("lagging and beeping")
+		if (UseMagicScrolling || speedUp > 1)
+		; if ((IsToggleDown || UseMagicScrolling) && ModsDown & ~ToggleBit = 0) ; using magic scrolling while speeding up fixes a stupid windows 10 bug ("lagging and beeping")
 			MagicScroll(dir, speedUp)
 		else
 			SendInput, {Wheel%dir% %speedUp%}
