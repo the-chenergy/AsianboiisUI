@@ -26,7 +26,7 @@
 	SetScrollLockState, Off
 ;}
 ;{ constants
-	global Version := "v4.1 Beta W 02/03/21"
+	global Version := "v4.1 Beta A 02/27/21"
 	
 	global DefaultSettingsFileName := "Settings.ini"
 	global UserSettingsFileName := Format("Settings_{}.ini", A_UserName)
@@ -127,6 +127,7 @@
 	global LoggerDataFileName
 	
 	global ProgramsAlwaysUseAccelScrolling
+	global ProgramsUseTraditionalAccelScrolling
 ;}
 ;{ global variables
 	global IsFnDown := false
@@ -254,10 +255,11 @@
 	; returns true if the program name contains any of the given keywords
 	ActiveProgramNameContains(targets)
 	{
-		WinGetTitle, temp, A
+		programName := GetActiveProgramName()
+		WinGetTitle, fullName, A
 		
 		for i, target in targets
-			if (InStr(temp, target))
+			if (InStr(programName, target) || Instr(fullName, target))
 				return true
 		
 		return false
@@ -1048,6 +1050,8 @@
 		LoadSetting("StickyKeyMask", "RControl")
 		LoadSetting("ProgramsAlwaysUseAccelScrolling", "")
 		ProgramsAlwaysUseAccelScrolling := StrSplit(ProgramsAlwaysUseAccelScrolling, "*")
+		LoadSetting("ProgramsUseTraditionalAccelScrolling", "")
+		ProgramsUseTraditionalAccelScrolling := StrSplit(ProgramsUseTraditionalAccelScrolling, "*")
 		
 		LoadSettingAndCheckTrayItem("UseMouseGestures", true, GestureTrayItem)
 		
@@ -2923,7 +2927,7 @@ return
 			}
 		}
 		
-		if (UseMagicScrolling || speedUp > 1)
+		if (UseMagicScrolling || speedUp > 1 && !ActiveProgramNameContains(ProgramsUseTraditionalAccelScrolling))
 		; if ((IsToggleDown || UseMagicScrolling) && ModsDown & ~ToggleBit = 0) ; using magic scrolling while speeding up fixes a stupid windows 10 bug ("lagging and beeping")
 			MagicScroll(dir, speedUp)
 		else
