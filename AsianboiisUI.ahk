@@ -1,4 +1,10 @@
-﻿;{ configurations
+﻿;{ todo
+	/*
+	- Extend the key-logger to capture and record the frequencies of bigrams (to help potentially develop an improved-Dvorak).
+	*/
+;}
+
+;{ configurations
 	#NoEnv
 	#SingleInstance, Force
 	#WinActivateForce
@@ -127,7 +133,7 @@
 	global LoggerDataFileName
 	
 	global ProgramsAlwaysUseAccelScrolling
-	global ProgramsUseTraditionalAccelScrolling
+	global ProgramsUseMagicAccelScrolling
 ;}
 ;{ global variables
 	global IsFnDown := false
@@ -1050,8 +1056,8 @@
 		LoadSetting("StickyKeyMask", "RControl")
 		LoadSetting("ProgramsAlwaysUseAccelScrolling", "")
 		ProgramsAlwaysUseAccelScrolling := StrSplit(ProgramsAlwaysUseAccelScrolling, "*")
-		LoadSetting("ProgramsUseTraditionalAccelScrolling", "")
-		ProgramsUseTraditionalAccelScrolling := StrSplit(ProgramsUseTraditionalAccelScrolling, "*")
+		LoadSetting("ProgramsUseMagicAccelScrolling", "")
+		ProgramsUseMagicAccelScrolling := StrSplit(ProgramsUseMagicAccelScrolling, "*")
 		
 		LoadSettingAndCheckTrayItem("UseMouseGestures", true, GestureTrayItem)
 		
@@ -2927,7 +2933,7 @@ return
 			}
 		}
 		
-		if (UseMagicScrolling || speedUp > 1 && !ActiveProgramNameContains(ProgramsUseTraditionalAccelScrolling))
+		if (UseMagicScrolling || speedUp > 1 && ActiveProgramNameContains(ProgramsUseMagicAccelScrolling))
 		; if ((IsToggleDown || UseMagicScrolling) && ModsDown & ~ToggleBit = 0) ; using magic scrolling while speeding up fixes a stupid windows 10 bug ("lagging and beeping")
 			MagicScroll(dir, speedUp)
 		else
