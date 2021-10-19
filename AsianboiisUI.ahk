@@ -2823,7 +2823,8 @@ return
 			IsAltTabMenuShowing := true
 		}
 		
-		SendInput, {L%temp% Down}{Tab}
+		SendInput, {L%temp% Down}
+		SendInput, {Tab}
 		KeyWait, XButton1
 		SendInput, {L%temp% Up}
 		
